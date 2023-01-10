@@ -18,7 +18,7 @@ type Props = {
 const Thumbnail: FunctionComponent<Props> = ({ movies }) => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(true);
+    setLoading(false);
   }, []);
 
   if (typeof movies === "number") {
