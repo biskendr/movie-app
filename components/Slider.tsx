@@ -89,7 +89,7 @@ const Slider: FunctionComponent<Props> = ({ movies }) => {
                           },
                         }}
                       >
-                        <Typography variant="h2" component="h2">
+                        <Typography variant="h3" component="h2">
                           {movie.title}
                         </Typography>
                         <Typography variant="body1">
