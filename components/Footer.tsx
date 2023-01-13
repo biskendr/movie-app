@@ -38,27 +38,27 @@ const Footer: FunctionComponent = () => {
       >
         <Grid item xs>
           <Link href="/">
-            <Typography variant="h5">Home</Typography>
+            <Typography variant="subtitle1">Home</Typography>
           </Link>
           <Link href="/about">
-            <Typography variant="h5">About</Typography>
+            <Typography variant="subtitle1">About</Typography>
           </Link>
-          <Typography variant="h5">Contact Us</Typography>
-          <Typography variant="h5">Term of Services</Typography>
+          <Typography variant="subtitle1">Contact Us</Typography>
+          <Typography variant="subtitle1">Term of Services</Typography>
         </Grid>
-        <Divider orientation="vertical" flexItem />
+        <Divider orientation="vertical" flexItem sx={{ mr: "2em" }} />
         <Grid item xs>
           <Link href="/#trending" scroll={false}>
-            <Typography variant="h5">Trending</Typography>
+            <Typography variant="subtitle1">Trending</Typography>
           </Link>
           <Link href="/#popular" scroll={false}>
-            <Typography variant="h5">Popular</Typography>
+            <Typography variant="subtitle1">Popular</Typography>
           </Link>
           <Link href="/#discover" scroll={false}>
-            <Typography variant="h5">Discover</Typography>
+            <Typography variant="subtitle1">Discover</Typography>
           </Link>
           <Link href="/#upcoming" scroll={false}>
-            <Typography variant="h5">Upcoming</Typography>
+            <Typography variant="subtitle1">Upcoming</Typography>
           </Link>
         </Grid>
       </Grid>

@@ -74,6 +74,7 @@ const Navbar: FunctionComponent = (props) => {
               id="standard-search"
               type={"text"}
               value={query}
+              aria-label="search"
               sx={{ p: "2em", fontSize: "2rem" }}
               onChange={(event) => handleInput(event)}
               onFocus={() => setIsShow(true)}

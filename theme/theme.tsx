@@ -11,6 +11,11 @@ const theme: Theme = createTheme({
       main: "#000",
     },
   },
+  typography: {
+    subtitle1: {
+      fontSize: 24,
+    },
+  },
 });
 
 export const gradientBorder = {
