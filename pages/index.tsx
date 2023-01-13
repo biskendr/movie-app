@@ -1,8 +1,6 @@
 import { GetServerSideProps } from "next";
 import { FunctionComponent } from "react";
 import Layout from "./Layout";
-import Thumbnail from "../components/Thumbnail";
-import Slider from "../components/Slider";
 import { Container, Grid, Typography } from "@mui/material";
 import { Movie } from "../types/types";
 import {
@@ -11,7 +9,18 @@ import {
   getUpcomingMovies,
   getPopularMovies,
 } from "../services/tmdbAPI";
+import dynamic from "next/dynamic";
+import Loading from "../components/Loading";
+import LoadingSlider from "../components/LoadingSlider";
 
+const Slider = dynamic(() => import("../components/Slider"), {
+  loading: () => <LoadingSlider />,
+  ssr: false,
+});
+const Thumbnail = dynamic(() => import("../components/Thumbnail"), {
+  loading: () => <Loading />,
+  ssr: false,
+});
 type Props = {
   moviesTrending: Movie[] | number;
   moviesPopular: Movie[] | number;

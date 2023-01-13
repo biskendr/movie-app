@@ -16,10 +16,7 @@ type Props = {
 };
 
 const Thumbnail: FunctionComponent<Props> = ({ movies }) => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  
 
   if (typeof movies === "number") {
     return <ErrorPage statusCode={movies} />;
@@ -55,26 +52,7 @@ const Thumbnail: FunctionComponent<Props> = ({ movies }) => {
       modules={[Pagination, Navigation]}
       className="mySwiper"
     >
-      {loading ? (
-        <Grid>
-          {Array.from(new Array(12)).map((item, index = 0) => (
-            <SwiperSlide key={index++}>
-              <Grid>
-                <Skeleton
-                  variant="rectangular"
-                  height={450}
-                  width={300}
-                  animation="wave"
-                />
-
-                <Skeleton variant="text" animation="wave" width={250} />
-              </Grid>
-            </SwiperSlide>
-          ))}
-        </Grid>
-      ) : (
-        <Grid>
-          {movies?.map((movie) => (
+      {movies?.map((movie) => (
             <SwiperSlide key={movie.id} tag={"article"}>
               {({ isVisible }) => (
                 <Grid sx={{ maxWidth: "300px" }}>
@@ -100,8 +78,6 @@ const Thumbnail: FunctionComponent<Props> = ({ movies }) => {
               )}
             </SwiperSlide>
           ))}
-        </Grid>
-      )}
     </Swiper>
   );
 };
